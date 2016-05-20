@@ -466,7 +466,6 @@ either correct the error or retry.
 
 
 @click.command()
-@click.option('--cluster-name', help='name of the cluster, required')
 @click.option('--cluster-size', default=3, type=int, help='number of nodes per region, default: 3')
 @click.option('--instance-type', default='t2.micro', help='default: t2.micro')
 @click.option('--volume-type', default='gp2', help='gp2 (default) | io1 | standard')
@@ -475,6 +474,7 @@ either correct the error or retry.
 @click.option('--no-termination-protection', is_flag=True, default=False)
 @click.option('--internal', is_flag=True, default=False, help='deploy into internal subnets using Private IP addresses, to be used with a single region only')
 @click.option('--scalyr-key')
+@click.argument('cluster_name', nargs=1)
 @click.argument('regions', nargs=-1)
 def cli(cluster_name: str, regions: list, cluster_size: int, instance_type: str,
         volume_type: str, volume_size: int, volume_iops: int,
