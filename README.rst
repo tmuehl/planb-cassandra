@@ -34,7 +34,7 @@ To create a cluster named "mycluster" in two regions with 3 nodes per region (de
 .. code-block:: bash
 
     $ mai login  # get temporary AWS credentials
-    $ ./create_cluster.py mycluster eu-west-1 eu-central-1
+    $ ./create_cluster.py --cluster-name mycluster eu-west-1 eu-central-1
 
 After allowing SSH access (TCP port 22) by changing the Security Group,
 you can use `Più`_ to get SSH access and create your application user and
